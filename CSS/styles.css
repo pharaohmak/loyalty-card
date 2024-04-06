@@ -1,0 +1,25 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+}
+
+form {
+    text-align: center;
+}
+
+
+h1 {
+    color: orange;
+    font-size: 48px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 28px;
+    color: orange;
+}
