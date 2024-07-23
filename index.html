@@ -1,22 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grade Letter Calculator</title>
-
+    <title>Shopping Calculator</title>
     <link rel="stylesheet" href="styles.css">
+    <script defer src="main.js"></script>
 </head>
-
 <body>
-    <!-- Intoroduction -->
-    <h1>Use the terminal to calculate grades for school</h1>
-    <h3>Remember to check the console for your results</h3>
-    </h2>
-
-    <script src="main.js"></script>
+    <h1>Shopping Calculator</h1>
+    <form id="shopping-form">
+        <div>
+            <label for="item1">Cost of Item 1 ($):</label>
+            <input type="number" id="item1" name="item1" step="0.01" required>
+        </div>
+        <div>
+            <label for="item2">Cost of Item 2 ($):</label>
+            <input type="number" id="item2" name="item2" step="0.01" required>
+        </div>
+        <div>
+            <label for="member">Are you a preferred member?</label>
+            <select id="member" name="member" required>
+                <option value="" disabled selected>Select</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+        </div>
+        <button type="button" id="calculate-btn">Calculate Total</button>
+    </form>
+    <div id="result" class="result"></div>
 </body>
-
 </html>

@@ -1,22 +1,23 @@
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('calculate-btn').addEventListener('click', () => {
+      const item1 = parseFloat(document.getElementById('item1').value);
+      const item2 = parseFloat(document.getElementById('item2').value);
+      const memberStatus = document.getElementById('member').value;
 
-item1 = parseFloat(prompt('Enter the Cost of Item 1'))
-item2 = parseFloat(prompt('Enter the cost of Item 2'))
+      if (isNaN(item1) || isNaN(item2)) {
+          alert('Please enter valid numbers for the item costs.');
+          return;
+      }
 
-x = prompt('Are you a preffered member')
-yes = 'yes' || 'Yes' || 'Y' || 'y' || 'YES'
-no = 'No' || 'no' || 'N' || 'n' || 'NO'
-
-if (x === no) {
-  y = item1 + item2
-  console.log('Results - “Your total purchase is $”' + y)
-} else if (x === yes) {
-  y = parseFloat((item1 + item2) * 0.15)
-  console.log(
-    'Results - “Your total purchase is $' +
-      y +
-      ' , which includes your 15% discount.”',
-  )
-} else {
-  alert('Error! Only enter "yes" or "no"')
-}
-
+      let totalCost;
+      if (memberStatus === 'no') {
+          totalCost = item1 + item2;
+          document.getElementById('result').innerText = `Your total purchase is $${totalCost.toFixed(2)}`;
+      } else if (memberStatus === 'yes') {
+          totalCost = (item1 + item2) * 0.85; // 15% discount
+          document.getElementById('result').innerText = `Your total purchase is $${totalCost.toFixed(2)}, which includes your 15% discount.`;
+      } else {
+          alert('Error! Please select "yes" or "no" for membership status.');
+      }
+  });
+});
